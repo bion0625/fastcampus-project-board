@@ -1,10 +1,10 @@
 package com.fastcampus.projectboard.domain;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -35,7 +35,7 @@ public class Article extends AuditingFields {
     @Setter private String hashtag; // 해시태그
 
     protected Article() {}
-    public Article(UserAccount userAccount, String title, String content, String hashtag){//todo of 설정(user)되면 private로 전환
+    private Article(UserAccount userAccount, String title, String content, String hashtag){
         this.userAccount = userAccount;
         this.title = title;
         this.content = content;
